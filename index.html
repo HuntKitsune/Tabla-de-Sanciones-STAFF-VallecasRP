@@ -24,7 +24,6 @@
         
         header { 
             background: #000; 
-            color: rgb(255, 255, 255); 
             padding: 40px 20px; 
             text-align: center; 
             border-bottom: 4px solid var(--primary); 
@@ -37,16 +36,54 @@
             text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.2);
         }
 
+        /* TABLA */
         table {
-            width: 500%; /* Opcional: para que ocupe el ancho disponible */
+            width: 80%;
+            margin: 40px auto;
             border-collapse: collapse;
-            margin-left: 210px;
+            table-layout: fixed;
         }
+
         th, td {
-            border: 3px solid rgb(255, 255, 255);
+            width: 33.33%;
+            border: 3px solid white;
             padding: 10px;
-            text-align: center; /* Esto centra el texto horizontalmente */
-            vertical-align: middle; /* Esto lo centra verticalmente */
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        /* ENCABEZADO */
+        th {
+            font-weight: 700;
+            color: white;
+        }
+
+        /* Primera columna (números, sin header) */
+        tr:not(:first-child) td:nth-child(1) {
+            font-weight: 700;
+            color: white;
+        }
+
+        /* Otras columnas (sin header) */
+        tr:not(:first-child) td:nth-child(2),
+        tr:not(:first-child) td:nth-child(3) {
+            color: white;
+        }
+
+        /* Colores columnas */
+        table tr td:nth-child(1),
+        table tr th:nth-child(1) {
+            background-color: #0033cc;
+        }
+
+        table tr td:nth-child(2),
+        table tr th:nth-child(2) {
+            background-color: #006400;
+        }
+
+        table tr td:nth-child(3),
+        table tr th:nth-child(3) {
+            background-color: #8b0000;
         }
 
         table strong{
@@ -103,35 +140,8 @@
             color: var(--text-secondary);
         }
 
-       
-        .sub-apartado { 
-            margin-top: 20px; 
-            padding: 15px; 
-            border-left: 4px solid var(--primary); 
-            background: #1a1a1a; 
-        }
-
-        .sub-titulo { 
-            font-weight: 700; 
-            color: var(--primary); 
-            display: block; 
-            margin-bottom: 10px; 
-            text-decoration: underline; 
-        }
-
         strong { color: #fa0101; }
         strong2 { color: #ff0000; }
-
-        .aceptacion { 
-            background: #1a0000; 
-            border: 2px solid var(--primary); 
-            padding: 30px; 
-            border-radius: 8px; 
-            margin-top: 30px; 
-            text-align: center; 
-        }
-
-        .aceptacion h3 { color: var(--primary); margin-bottom: 15px; }
 
         .footer { text-align: center; padding: 40px; color: #555; font-size: 0.9rem; }
 
@@ -148,194 +158,62 @@
     <div class="acordion">
         <button class="btn-acordion">🔴 TABLA DE SANCIONES <span>+</span></button>
         <div class="contenido">
-            <div class="texto">Aquí se dejará el listado de sanciones correspondiente según la infracción o infracciones cometidas. <strong>(Unica excepcion a estas sanciones serán comunicadas por Cúpula o Anubis)</strong>
+            <div class="texto">
+Aquí se dejará el listado de sanciones correspondiente según la infracción o infracciones cometidas. <strong>(Unica excepcion a estas sanciones serán comunicadas por Cúpula o Anubis)</strong>
 
-                <table style="border-collapse: collapse; width: 50%;" border="4">
-                    <tr>
-                        <td>  #  </td>
-                        <td> INFRACCIÓN </td>
-                        <td>  SANCIÓN  </td>
-                    </tr>
-                    <tr>
-                        <td> 1 </td>
-                        <td> Uso de Software Externo (Cheats) </td>
-                        <td> Baneo Permanente </td>
-                    </tr>
-                    <tr>
-                        <td> 2 </td>
-                        <td> Ataques al Servidor </td>
-                        <td> Baneo Permanente </td>
-                    </tr>
-                    <tr>
-                        <td> 3 </td>
-                        <td> Toxicidad / Discriminación Masiva </td>
-                        <td> Baneo Permanente </td>
-                    </tr>
-                    <tr>
-                        <td> 4 </td>
-                        <td> Abuso de Bugs Críticos </td>
-                        <td> Baneo Permanente </td>
-                    </tr>
-                    <tr>
-                        <td> 5 </td>
-                        <td> Publicidad (SPAM) </td>
-                        <td> Baneo Permanente </td>
-                    </tr>
-                    <tr>
-                        <td> 6 </td>
-                        <td> Rol Sexual sin consentimiento </td>
-                        <td> Baneo Permanente </td>
-                    </tr>
-                    <tr>
-                        <td> 7 </td>
-                        <td> Nombres troll </td>
-                        <td> CK DIRECTO </td>
-                    </tr>
-                    <tr>
-                        <td> 8 </td>
-                        <td> Plagio de Identidad </td>
-                        <td> Baneo Permanente </td>
-                    </tr>
-                    <tr>
-                        <td> 9 </td>
-                        <td> Acumulación de Warnings </td>
-                        <td> Baneo Permanente </td>
-                    </tr>
-                    <tr>
-                        <td> 10 </td>
-                        <td> Infiltración en Facciones sin permiso </td>
-                        <td> Baneo Permanente </td>
-                    </tr>
-                    <tr>
-                        <td> 11 </td>
-                        <td> Mentir al Staff </td>
-                        <td> BAN 2 a 4 días </td>
-                    </tr>
-                    <tr>
-                        <td> 12 </td>
-                        <td> Metagaming (MG) </td>
-                        <td> 2H Jail </td>
-                    </tr>
-                    <tr>
-                        <td> 13 </td>
-                        <td> Robo de helicopteros/aviones (Sin rol/oposición necesaria) </td>
-                        <td> Ban 3 días </td>
-                    </tr>
-                    <tr>
-                        <td> 14 </td>
-                        <td> RDM / VDM (Masivo) </td>
-                        <td> Baneo 3 días </td>
-                    </tr>
-                    <tr>
-                        <td> 15 </td>
-                        <td> Abuso de Job </td>
-                        <td> 50 barridas. Si reitera 2h de Jail. </td>
-                    </tr>
-                    <tr>
-                        <td> 16 </td>
-                        <td> Evasión de Rol Tirando de F8 </td>
-                        <td> Ban 1 día </td>
-                    </tr>
-                    <tr>
-                        <td> 17 </td>
-                        <td> PowerGaming (PG) </td>
-                        <td> 2H Jail </td>
-                    </tr>
-                    <tr>
-                        <td> 18 </td>
-                        <td> No valorar vida (propia o de compañeros) </td>
-                        <td> 2H Jail o 350 barridas. Depende de la situación <strong2>CK</strong2> </td>
-                    </tr>
-                    <tr>
-                        <td> 19 </td>
-                        <td> Mentir por /do </td>
-                        <td> 200 barridas o 90 mins jail </td>
-                    </tr>
-                    <tr>
-                        <td> 20 </td>
-                        <td> Forzar Rol </td>
-                        <td> 1h y 30 mins Jail o 200 barridas </td>
-                    </tr>
-                    <tr>
-                        <td> 21 </td>
-                        <td> Incumplir tiempos (tiempo de anuncios de negocios) </td>
-                        <td> 30m Jail o 80 barridas </td>
-                    </tr>
-                    <tr>
-                        <td> 22 </td>
-                        <td> Incumplir tiempos (salidas de facciones legales e ilegales) </td>
-                        <td> 1 semana de BAN </td>
-                    </tr>
-                    <tr>
-                        <td> 23 </td>
-                        <td> Ropa BUG </td>
-                        <td> Aviso (Si no hace caso, 1h Jail. Si continua sin hacer caso 1d BAN) </td>
-                    </tr>
-                    <tr>
-                        <td> 24 </td>
-                        <td> SPAM en Chat </td>
-                        <td> 1H y 30 mins Jail o 200 barridas </td>
-                    </tr>
-                    <tr>
-                        <td> 25 </td>
-                        <td> ID puestas si no es para un reporte </td>
-                        <td> 40 mins Jail o 100 barridas </td>
-                    </tr>
-                    <tr>
-                        <td> 26 </td>
-                        <td> No dar Fair Play </td>
-                        <td> 120 barridas. Si reitera 1h y 30 min de jail. </td>
-                    </tr>
-                    <tr>
-                        <td> 27 </td>
-                        <td> No llevar nada cacheable en Zona caliente </td>
-                        <td> 30m Jail o 80 barridas </td>
-                    </tr>
-                    <tr>
-                        <td> 28 </td>
-                        <td> LLevar 2 o más prendas en cabeza </td>
-                        <td> 30m Jail o 80 barridas </td>
-                    </tr>
-                    <tr>
-                        <td> 29 </td>
-                        <td> Tirar F8 cuando un STAFF le indica subir a soporte </td>
-                        <td> BAN PERMANENTE A ESPERA DE QUE SUBA. Cuando suba, 2h extra de JAIL. </td>
-                    </tr>
-                    <tr>
-                        <td> 30 </td>
-                        <td> No cumplir normativa ARMAS VIP </td>
-                        <td> 30m Jail o 80 barridas </td>
-                    </tr>
-                    <tr>
-                        <td> 31 </td>
-                        <td> CITIZEN NO PERMITIDO (SIN AI) </td>
-                        <td> 30m Jail </td>
-                    </tr>
-                    <tr>
-                        <td> 32 </td>
-                        <td> Citizen CON AI </td>
-                        <td> BAN 3 DIAS </td>
-                    </tr>
-                    <tr>
-                        <td> 33 </td>
-                        <td> Faltas de respeto en reportes y no respeto de turno de palabra </td>
-                        <td> 30m Jail </td>
-                    </tr>
-                    <tr>
-                        <td> 34 </td>
-                        <td> Inciar Rol Agresivo en ZS </td>
-                        <td> 1h y 30min Jail o 200 barridas </td>
-                    </tr>
-                    <tr>
-                        <td> 35 </td>
-                        <td>  </td>
-                        <td>  </td>
-                    </tr>
-                </table>
+<table>
+<tr>
+    <th>#</th>
+    <th>INFRACCIÓN</th>
+    <th>SANCIÓN</th>
+</tr>
+
+<tr><td>1</td><td>Uso de Software Externo (Cheats)</td><td>Baneo Permanente</td></tr>
+<tr><td>2</td><td>Ataques al Servidor</td><td>Baneo Permanente</td></tr>
+<tr><td>3</td><td>Toxicidad / Discriminación Masiva</td><td>Baneo Permanente</td></tr>
+<tr><td>4</td><td>Abuso de Bugs Críticos</td><td>Baneo Permanente</td></tr>
+<tr><td>5</td><td>Publicidad (SPAM)</td><td>Baneo Permanente</td></tr>
+<tr><td>6</td><td>Rol Sexual sin consentimiento</td><td>Baneo Permanente</td></tr>
+<tr><td>7</td><td>Nombres troll</td><td>CK DIRECTO</td></tr>
+<tr><td>8</td><td>Plagio de Identidad</td><td>Baneo Permanente</td></tr>
+<tr><td>9</td><td>Acumulación de Warnings</td><td>Baneo Permanente</td></tr>
+<tr><td>10</td><td>Infiltración en Facciones sin permiso</td><td>Baneo Permanente</td></tr>
+<tr><td>11</td><td>Mentir al Staff</td><td>BAN 2 a 4 días</td></tr>
+<tr><td>12</td><td>Metagaming (MG)</td><td>2H Jail</td></tr>
+<tr><td>13</td><td>Robo de helicopteros/aviones</td><td>Ban 3 días</td></tr>
+<tr><td>14</td><td>RDM / VDM (Masivo)</td><td>Baneo 3 días</td></tr>
+<tr><td>15</td><td>Abuso de Job</td><td>50 barridas / 2H Jail</td></tr>
+<tr><td>16</td><td>Evasión de Rol Tirando de F8</td><td>Ban 1 día</td></tr>
+<tr><td>17</td><td>PowerGaming (PG)</td><td>2H Jail</td></tr>
+<tr><td>18</td><td>No valorar vida</td><td>2H Jail o 350 barridas <strong2>CK</strong2></td></tr>
+<tr><td>19</td><td>Mentir por /do</td><td>200 barridas o 90 mins jail</td></tr>
+<tr><td>20</td><td>Forzar Rol</td><td>1h 30min Jail o 200 barridas</td></tr>
+<tr><td>21</td><td>Incumplir tiempos (negocios)</td><td>30m Jail o 80 barridas</td></tr>
+<tr><td>22</td><td>Incumplir tiempos (facciones)</td><td>1 semana BAN</td></tr>
+<tr><td>23</td><td>Ropa BUG</td><td>Aviso / Jail / BAN</td></tr>
+<tr><td>24</td><td>SPAM en Chat</td><td>1h 30min Jail o 200 barridas</td></tr>
+<tr><td>25</td><td>ID sin motivo</td><td>40 mins Jail o 100 barridas</td></tr>
+<tr><td>26</td><td>No dar Fair Play</td><td>120 barridas / Jail</td></tr>
+<tr><td>27</td><td>No llevar cacheable</td><td>30m Jail o 80 barridas</td></tr>
+<tr><td>28</td><td>2 prendas en cabeza</td><td>30m Jail o 80 barridas</td></tr>
+<tr><td>29</td><td>Tirar F8 a STAFF</td><td>BAN + Jail</td></tr>
+<tr><td>30</td><td>No cumplir armas VIP</td><td>30m Jail o 80 barridas</td></tr>
+<tr><td>31</td><td>Citizen no permitido</td><td>30m Jail</td></tr>
+<tr><td>32</td><td>Citizen con AI</td><td>BAN 3 días</td></tr>
+<tr><td>33</td><td>Faltas en reportes</td><td>30m Jail</td></tr>
+<tr><td>34</td><td>Rol agresivo en ZS</td><td>1h 30min Jail o 200 barridas</td></tr>
+<tr><td>35</td><td>No hacer buen uso de herramientas (/ayuda, /report...)</td><td>30min Jail</td></tr>
+<tr><td>36</td><td>Campeo de zonas seguras / drogas / spawn</td><td>2h Jail o 350 barridas</td></tr>
+<tr><td>37</td><td>Mentir en reporte o pruebas falsas</td><td>3 días BAN</td></tr>
+<tr><td>38</td><td>Uso de armas largas sin rol aprobado</td><td>3h Jail o 500 barridas</td></tr>
+
+</table>
+
             </div>
         </div>
     </div>
 </div>
+
 <div class="footer">
     <p>&copy; 2026 Vallecas RP💎- Todos los derechos reservados.</p>
 </div>
